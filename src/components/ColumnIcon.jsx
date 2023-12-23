@@ -15,8 +15,6 @@ import {
 import { AiOutlineWarning as Signal4 } from "react-icons/ai";
 
 const ColumnIcon = ({ title, from, size, color }) => {
-  //   const { option2 } = useOptionContext();
-
   if (from === "userId") {
     return <Avatar name={title} size="20" round />;
   } else if (from === "status") {

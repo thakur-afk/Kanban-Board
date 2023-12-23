@@ -38,7 +38,7 @@ const Nav = () => {
               } ${dark ? "dark" : ""}
               `}
             >
-              <div className={`flex   items-center gap-10 `}>
+              <div className={`flex items-center gap-10 `}>
                 <h1>Grouping</h1>
                 <select
                   value={localStorage.getItem("option2")}

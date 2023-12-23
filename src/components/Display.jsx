@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useOptionContext } from "../context/UserContextApi";
 import Card from "./Card";
 import Column from "./Column";
@@ -7,24 +7,13 @@ const Display = () => {
   const [data, setData] = useState(null);
 
   const { option1, option2, option3, dark, flag } = useOptionContext();
-
-  //   const option1 = "users";
-  //   const option2 = "userId";
-  //   const option3 = "title";
-  //   const flag = false;
-  //   const dark = false;
-
   useEffect(() => {
-    console.log("inside");
     async function fetchData() {
-      console.log("s");
       const res = await fetch(
         "https://tfyincvdrafxe7ut2ziwuhe5cm0xvsdu.lambda-url.ap-south-1.on.aws/ticketAndUsers"
       ).then((res) => res.json());
       if (res) {
         setData(res);
-        console.log(option3);
-        // console.log(data);
       }
     }
     fetchData();
@@ -43,7 +32,7 @@ const Display = () => {
                   flag ? arr.indexOf(item) === index : true
                 )
                 .map((val, id) => {
-                  let userId = val.id || val;
+                  let checkFor = val.id || val;
 
                   let user;
                   if (val === 0) {
@@ -60,7 +49,7 @@ const Display = () => {
                     user = val.name || val;
                   }
                   const ticket = data?.tickets.filter(
-                    (tick) => tick[option2] === userId
+                    (tick) => tick[option2] === checkFor
                   );
                   if (option3 === "priority") {
                     ticket.sort((a, b) => b.priority - a.priority);
@@ -83,10 +72,6 @@ const Display = () => {
 
                   return (
                     <div key={id} className=" flex flex-col gap-2 pt-4">
-                      {/* <h1>
-                        {user}
-                        {ticket.length}
-                      </h1> */}
                       <Column title={user} length={ticket.length} />
                       <div className="flex flex-col gap-4 pt-4 w-full">
                         {ticket.map((item, i) => (
@@ -121,4 +106,3 @@ const Display = () => {
 };
 
 export default Display;
-//flex gap-2 justify-between px-4 flex-wrap

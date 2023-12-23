@@ -1,54 +1,14 @@
 import React from "react";
 import { useOptionContext } from "../context/UserContextApi";
-import Avatar from "react-avatar";
 import { WiMoonFull } from "react-icons/wi";
-import {
-  LuCircleDashed as BacklogIcon,
-  LuCircle as TodoIcon,
-} from "react-icons/lu";
-import { TbProgressCheck as InProgressIcon } from "react-icons/tb";
 
-import {
-  BiSignal1,
-  BiDotsHorizontal as Signal0,
-  BiSignal2 as Signal1,
-  BiSignal3 as Signal2,
-  BiSignal4 as Signal3,
-} from "react-icons/bi";
-import { AiTwotoneWarning as Signal4 } from "react-icons/ai";
 import ColumnIcon from "./ColumnIcon";
 
 const Card = ({ item, userData }) => {
   let username = userData.filter((v) => item.userId === v.id);
-  console.log(username);
   username = username[0].name;
 
   const { dark, option1, option2 } = useOptionContext();
-  // let Signal;
-  // if (item.priority === 0) {
-  //   Signal = Signal0;
-  // } else if (item.priority === 1) {
-  //   Signal = Signal1;
-  // } else if (item.priority === 2) {
-  //   Signal = Signal2;
-  // } else if (item.priority === 2) {
-  //   Signal = Signal2;
-  // } else if (item.priority === 3) {
-  //   Signal = Signal3;
-  // } else if (item.priority === 4) {
-  //   Signal = Signal4;
-  // }
-
-  // let StatusIcon;
-
-  // if (item.status === "Backlog") {
-  //   StatusIcon = BacklogIcon;
-  // } else if (item.status === "Todo") {
-  //   StatusIcon = TodoIcon;
-  // } else if (item.status === "In progress") {
-  //   StatusIcon = InProgressIcon;
-
-  // }max-w-[270px]
   return (
     <div
       className={` rounded-md flex flex-col gap-1 bg-white w-full  py-2 px-4 ${
