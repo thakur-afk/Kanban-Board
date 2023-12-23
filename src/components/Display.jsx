@@ -35,7 +35,7 @@ const Display = () => {
       {data ? (
         <div className="">
           <div className={`flex flex-col ${dark ? "dark2" : ""}`}>
-            <div className="grid lg:grid-cols-5 px-4 pt-3 md:grid-cols- justify-center">
+            <div className="grid lg:grid-cols-5 px-4 gap-4 pt-3 md:grid-cols-3 sm:grid-cols-2 justify-center">
               {data[option1]
                 ?.map((v) => (flag ? v[option2] : v))
                 .sort()
@@ -88,7 +88,7 @@ const Display = () => {
                         {ticket.length}
                       </h1> */}
                       <Column title={user} length={ticket.length} />
-                      <div className="flex flex-col gap-4 pt-4">
+                      <div className="flex flex-col gap-4 pt-4 w-full">
                         {ticket.map((item, i) => (
                           <Card key={i} item={item} userData={data.users} />
                         ))}

@@ -47,10 +47,11 @@ const Card = ({ item, userData }) => {
   //   StatusIcon = TodoIcon;
   // } else if (item.status === "In progress") {
   //   StatusIcon = InProgressIcon;
-  // }
+
+  // }max-w-[270px]
   return (
     <div
-      className={` rounded-md flex flex-col gap-1 bg-white  max-w-[270px] py-2 px-4 ${
+      className={` rounded-md flex flex-col gap-1 bg-white w-full  py-2 px-4 ${
         dark ? "dark" : ""
       }`}
     >
