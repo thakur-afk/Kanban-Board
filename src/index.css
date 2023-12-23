@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark {
+  @apply bg-[#161B22] text-zinc-50 border-[#4a4a4a]
+}
+
+.dark2{
+  
+    @apply bg-[#010409] text-zinc-50 
+  
+}
